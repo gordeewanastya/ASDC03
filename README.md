@@ -1,4 +1,4 @@
-##Lab ASDC Dynamic Data Structures
+## Lab ASDC Dynamic Data Structures
 
 ---
 
