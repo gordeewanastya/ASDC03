@@ -1,6 +1,5 @@
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
+
 
 public class ReaderCSV {
     public static final String SEPARATOR = ",";
@@ -16,14 +15,14 @@ public class ReaderCSV {
         return null;
     }
 
-    public  List<Student> readFromFile(File file){
-        List<Student> listOfStudents = new ArrayList<>();
+    public  QueueOfStudents readFromFile(File file){
+        QueueOfStudents queueOfStudents = new QueueOfStudents();
         String data;
         try {
             BufferedReader reader = new BufferedReader(new FileReader(file));
             while((data = reader.readLine()) != null){
                 Student stud = read(data);
-                listOfStudents.add(stud);
+                queueOfStudents.addStudent(stud);
             }
 
         } catch (FileNotFoundException e) {
@@ -31,6 +30,6 @@ public class ReaderCSV {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return listOfStudents;
+        return queueOfStudents;
     }
 }

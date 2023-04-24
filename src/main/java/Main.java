@@ -1,15 +1,44 @@
 import java.io.File;
-import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        File file = new File("src/main/resources/studentsUnique.csv");
+        File file = new File("src/main/resources/students.csv");
         ReaderCSV readerCSV = new ReaderCSV();
 
-        // READ STUDENTS FROM FILE INTO LIST
-        List<Student> students = readerCSV.readFromFile(file);
+        /**
+         * Считываем студентов с файла .csv в Queue
+         * */
+        QueueOfStudents students = readerCSV.readFromFile(file);
 
-        // SHOW THEM ON THE SCREEN
-        students.stream().forEach(System.out::println);
+        /**
+         * обход и вывод
+         * */
+        students.traverseAndPrint();
+
+        /**
+         * вставка в конец очереди
+         * */
+        students.addStudent(new Student("ANASTASIA", "GORDEEVA", "COMPUTER SCIENCE",
+                2003,2021,2004560268997L));
+
+        students.traverseAndPrint();
+
+
+        /**
+         * поиск
+         * */
+        String result = students.lookFor(new Student("ANASTASIA", "GORDEEVA", "COMPUTER SCIENCE",
+                2003,2021,2004560268997L)) ?
+        "\nSuccesfully found required student\n" : "\nStudent does not exist\n";
+
+        System.out.println(result);
+
+        /**
+         * удаление из начала очереди
+         * */
+
+        students.deleteStudent();
+
+        students.traverseAndPrint();
     }
 }
