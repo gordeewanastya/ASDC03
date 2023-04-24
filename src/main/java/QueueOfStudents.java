@@ -1,11 +1,14 @@
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Spliterator;
+import java.util.function.Consumer;
 
 /**
  * Класс для работы с динамической структрурой - очередью, с элементами типа - Student
  * @author Gordeeva Anastasia
  * */
-public class QueueOfStudents {
+public class QueueOfStudents implements Iterable<Student>{
     private Queue<Student> students = new LinkedList<>();
 
     /**
@@ -46,6 +49,18 @@ public class QueueOfStudents {
     }
 
 
+    @Override
+    public Iterator<Student> iterator() {
+        return students.iterator();
+    }
 
+    @Override
+    public void forEach(Consumer<? super Student> action) {
+        Iterable.super.forEach(action);
+    }
 
+    @Override
+    public Spliterator<Student> spliterator() {
+        return Iterable.super.spliterator();
+    }
 }
