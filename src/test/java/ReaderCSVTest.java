@@ -24,19 +24,19 @@ class ReaderCSVTest {
 
 
 
-//    @Test
-//    public void testReadFromFile(@TempDir File tempDir) throws IOException {
-//        // Создание временного файла с тестовыми данными
-//        File testFile = new File(tempDir, "test.csv");
-//        String testData = "John,Doe,Mathematics,3,90,1234567890\nJane,Doe,Physics,2,85,2345678901";
-//        FileUtils.writeStringToFile(testFile, testData, "UTF-8");
-//
-//        ReaderCSV reader = new ReaderCSV();
-//        QueueOfStudents expectedQueue = new QueueOfStudents();
-//        expectedQueue.addStudent(new Student("John", "Doe", "Mathematics", 3, 90, 1234567890L));
-//        expectedQueue.addStudent(new Student("Jane", "Doe", "Physics", 2, 85, 2345678901L));
-//        QueueOfStudents actualQueue = reader.readFromFile(testFile);
-//
-//        assertEquals(expectedQueue, actualQueue);
-//    }
+    @Test
+    public void testReadFromFile(@TempDir File tempDir) throws IOException {
+        // Создание временного файла с тестовыми данными
+        File testFile = new File(tempDir, "test.csv");
+        String testData = "John,Doe,Mathematics,3,90,1234567890\nJane,Doe,Physics,2,85,2345678901";
+        FileUtils.writeStringToFile(testFile, testData, "UTF-8");
+
+        ReaderCSV reader = new ReaderCSV();
+        QueueOfStudents expectedQueue = new QueueOfStudents();
+        expectedQueue.addStudent(new Student("John", "Doe", "Mathematics", 3, 90, 1234567890L));
+        expectedQueue.addStudent(new Student("Jane", "Doe", "Physics", 2, 85, 2345678901L));
+        QueueOfStudents actualQueue = reader.readFromFile(testFile);
+
+        assertEquals(expectedQueue, actualQueue);
+    }
 }
