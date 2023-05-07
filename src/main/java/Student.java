@@ -34,6 +34,7 @@ public class Student implements Cloneable,Comparable<Student>{
         this.faculty = s.faculty;
         this.yearOfBirth = s.yearOfBirth;
         this.yearOfAdmission = s.yearOfAdmission;
+        this.identificationNumber = s.identificationNumber;
     }
 
     // USING OBJECT CLASS CLONE METHOD TO BE ABLE TO CLONE OUR STUDENTS

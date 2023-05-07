@@ -24,6 +24,16 @@ public class BinarySearchTree {
     }
 
 
+    public static void main(String[] args) {
+        BinarySearchTree bst = new BinarySearchTree();
+        bst.insert(new Student("Ethan","Thompson","Science",2001,2018,1024000000024L));
+        bst.insert(new Student("Mia","Jackson","Arts",2002,2019,1020000000020L));
+        bst.insert(new Student("Noah","Lee","Engineering",2003,2020,1037000000037L));
+        bst.insert(new Student("Olivia","Martinez","Business",2000,2017,1028000000028L));
+        bst.insert(new Student("Sophia","Thompson","Arts",2002,2019,1003000000003L));
+
+        bst.inOrderTraversal();
+    }
 
     /**
      * Обход binary tree в прямом порядке
@@ -31,9 +41,9 @@ public class BinarySearchTree {
      * @author Gordeeva Anastasia
      * */
     public void preOrderTraversal() {
-        System.out.println("\n\nTraverse Pre Order: \n\n");
+//        System.out.println("\n\nTraverse Pre Order: \n\n");
         preOrderTraversal(root);
-        System.out.println("\n\n=============\n\n");
+//        System.out.println("\n\n=============\n\n");
     }
 
 
@@ -56,9 +66,9 @@ public class BinarySearchTree {
      * @author Gordeeva Anastasia
      * */
     public void postOrderTraversal() {
-        System.out.println("\n\nTraverse Post Order: \n\n");
+//        System.out.println("\n\nTraverse Post Order: \n\n");
         postOrderTraversal(root);
-        System.out.println("\n\n=============\n\n");
+//        System.out.println("\n\n=============\n\n");
     }
 
 
@@ -81,9 +91,9 @@ public class BinarySearchTree {
      * @author Gordeeva Anastasia
      * */
     public void inOrderTraversal(){
-        System.out.println("\n\nTraverse In Order: \n\n");
+//        System.out.println("\n\nTraverse In Order: \n\n");
         inOrderTraversal(root);
-        System.out.println("\n\n=============\n\n");
+//        System.out.println("\n\n=============\n\n");
     }
 
 
